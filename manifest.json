@@ -17,6 +17,11 @@
 		"browser_action":{
 				"default_icon": "static/honwei.png",
 				"default_popup": "html/data.html"
+		},
+		"icons":{
+				"16":"static/honwei.png",
+				"48":"static/honwei48.png",
+				"128":"static/honwei128.png"
 		}
 
 
