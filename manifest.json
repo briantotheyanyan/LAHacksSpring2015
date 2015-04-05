@@ -1,41 +1,21 @@
 {
-		"manifest_version": 2,
-
-		"name": "Bloomberg Vision",
-		"short_name": "BV",
-		"description": "Allows users to keep track of financial markets",
-		"version": "1.0",
-		"content_security_policy": "script-src 'self' https://cdn.firebase.com https://*.firebaseio.com; object-src 'self'",
-
-		"background": {
-				//"scripts": ["scripts/background.js", "scripts/firebase.js"],
-				"page": "html/background.html",
-				"persistent": false
-			},
-
-		"content_scripts":
-		[
-				{
-						"matches":["http://*/*", "https://*/*"],
-						"js":["scripts/jquery-2.1.3.js", "scripts/content.js", "scripts/firebase.js"],
-						"run_at":"document_start"
-				}
-		],	
-
-		"permissions": [
-					   "tabs",
-					   "<all_urls>"
-		],
-
-		"browser_action":{
-				"default_icon": "static/honwei.png",
-				"default_popup": "html/data.html"
-		},
-		"icons":{
-				"16":"static/honwei.png",
-				"48":"static/honwei48.png",
-				"128":"static/honwei128.png"
-		}
-		
-
+  "name": "Bloomberg Vision",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Easily analyze stock information.",
+  "content_security_policy": "script-src 'self' https://cdn.firebase.com https://*.firebaseio.com https://*.firebaseio-demo.com; object-src 'self'",
+  "icons": {
+    "16": "static/honwei.png",
+    "48": "static/honwei.png",
+    "128": "static/honwei128.png"
+  },
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": "static/honwei.png",
+    "default_title": "browser action",
+    "default_popup": "src/browser_action/browser_action.html"
+  }
 }
