@@ -10,12 +10,12 @@
     "128": "static/honwei128.png"
   },
   "background": {
-    "page": "src/bg/background.html",
+    "scripts": ["scripts/background.js"],
     "persistent": true
   },
   "browser_action": {
     "default_icon": "static/honwei.png",
     "default_title": "browser action",
-    "default_popup": "src/browser_action/browser_action.html"
+    "default_popup": "scripts/browser_action.html"
   }
 }
