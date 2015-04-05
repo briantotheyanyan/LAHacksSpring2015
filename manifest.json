@@ -17,5 +17,13 @@
     "default_icon": "static/honwei.png",
     "default_title": "browser action",
     "default_popup": "scripts/browser_action.html"
-  }
+  },
+  "content_scripts":
+  [	
+  	{
+		  "content_security_policy": "script-src 'self' https://cdn.firebase.com https://*.firebaseio.com https://*.firebaseio-demo.com; object-src 'self'",
+		"matches":["<all_urls>"],
+		"js":["scripts/browser_action.js"]
+	}
+  ]	
 }

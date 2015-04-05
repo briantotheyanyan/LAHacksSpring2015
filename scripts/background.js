@@ -1,13 +1,10 @@
-// if you checked "fancy-settings" in extensionizr.com, uncomment this lines
+$(document).ready(function(){
+		$('head').append(<script src='https://cdn.firebase.com/v0/firebase.js'></script>);
+		var f = new Firebase("https://swagaliicious.firebaseio.com/");
+		f.on('child_added', function (snapshot) {
+				var message = snapshot.val();
+				console.log(message);
+			});
+	}
+);
 
-// var settings = new Store("settings", {
-//     "sample_setting": "This is how you use Store.js to remember values"
-// });
-
-
-//example of using a message handler from the inject scripts
-chrome.extension.onMessage.addListener(
-  function(request, sender, sendResponse) {
-  	chrome.pageAction.show(sender.tab.id);
-    sendResponse();
-  });

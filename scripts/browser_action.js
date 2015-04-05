@@ -1,14 +1,13 @@
 Firebase.enableLogging(true);
-var f = new Firebase('https://chrome-sample.firebaseio-demo.com/');
+var f = new Firebase('https://swagalicious.firebaseio.com/');
 
-f.transaction(function(curr) {
-  if (isNaN(parseFloat(curr)))
-    return 1; // initialize to 1.
-  else
-    return curr + 1; // increment.
-}, function() {
-    // Once the transaction has completed, update the UI (and watch for updates).
-    f.on('value', function(s) {
-      document.getElementById('contents').innerHTML = s.val();
-    });
-  });
+window.addEventListener("mouseup", function(event){
+		var line="";
+		line = window.getSelection().toString();
+		console.log(line);
+
+		if(line != ""){
+			f.push({"text": line});
+		}
+	}
+	);
